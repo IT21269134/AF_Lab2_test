@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q3</title>
+	</head>
+	<body></body>
+
+	<script>
+		async function fetchDataAsync(url) {
+			try {
+				const data = await fetchData(url);
+				console.log("Data:", data); // Log response data if successful
+			} catch (error) {
+				console.error("Error:", error); // Log error if Promise is rejected
+			}
+		}
+
+		// Example usage:
+		fetchDataAsync("https://www.w3schools.com/");
+	</script>
+</html>

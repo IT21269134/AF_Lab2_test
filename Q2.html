@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q2</title>
+	</head>
+	<body></body>
+	<script>
+		function fetchData(url) {
+			return new Promise(function (resolve, reject) {
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						if (xhr.status === 200) {
+							resolve(xhr.responseText); // Resolve with response data
+						} else {
+							reject(new Error("Request failed with status " + xhr.status)); // Reject with error
+						}
+					}
+				};
+				xhr.open("GET", url);
+				xhr.send();
+			});
+		}
+
+		// Example usage:
+		fetchData("https://www.w3schools.com/")
+			.then(function (data) {
+				console.log("Data:", data); // Log response data if Promise is resolved
+			})
+			.catch(function (error) {
+				console.error("Error:", error); // Log error if Promise is rejected
+			});
+	</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>asyncAwait</title>
+	</head>
+	<body></body>
+	<script>
+		async function checkRoomStatus() {
+			let promiseToCleanTheRoom = new Promise((resolve, reject) => {
+				let isClean = true;
+				if (isClean) {
+					resolve("Clean");
+				} else {
+					reject("Not Clean");
+				}
+			});
+		}
+	</script>
+</html>

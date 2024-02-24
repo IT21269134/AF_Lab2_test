@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Callback</title>
+	</head>
+	<body></body>
+	<script>
+		function greeting(name, callback) {
+			console.log("Hello " + name);
+			callback();
+		}
+
+		//callback function
+		function showDone() {
+			console.log("Done");
+		}
+
+		// passing function as an argumet
+		greeting("John", showDone);
+	</script>
+</html>
